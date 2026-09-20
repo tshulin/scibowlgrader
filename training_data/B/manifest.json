@@ -1,0 +1,106 @@
+{
+ "generated_utc": "2026-09-20T03:11:16+00:00",
+ "source_batches": [
+  "B"
+ ],
+ "rows_per_source_batch": {
+  "B": 18586
+ },
+ "prompt_version": "prompt_v1",
+ "prompt_spec": "docs/grading_spec.md",
+ "prompt_system_sha256": "e1629bfd15a3d51f061228700f3c0f2e824c29b27be3cde732d729c2ecb5a336",
+ "tokenizer": "Qwen/Qwen3.5-0.8B",
+ "enable_thinking": false,
+ "format": "csv",
+ "column_mapping": {
+  "prompt": "prompt",
+  "completion": "completion"
+ },
+ "processing_mode": "raw",
+ "seed": 7,
+ "val_frac_questions": 0.05,
+ "split_unit": "question_id",
+ "totals": {
+  "rows": 18586,
+  "questions": 2795,
+  "label_balance": {
+   "INCORRECT": 9547,
+   "CORRECT": 9039
+  },
+  "variant_type": {
+   "near_miss": 4855,
+   "plausible_wrong": 2774,
+   "synonym": 2627,
+   "spelling": 2603,
+   "exact": 1448,
+   "format": 1383,
+   "extra_correct": 784,
+   "extra_wrong": 750,
+   "hedge": 666,
+   "incomplete": 437,
+   "math_equiv": 194,
+   "do_not_accept": 65
+  },
+  "near_miss_share_of_negatives_pct": 50.85
+ },
+ "splits": {
+  "train": {
+   "path": "data/training/train.csv",
+   "rows": 17645,
+   "questions": 2655,
+   "sha256": "285666db4fcebd3a490b00c4dad28b8b608cad602727df64411b96dfae703995",
+   "label_balance": {
+    "INCORRECT": 9052,
+    "CORRECT": 8593
+   },
+   "variant_type": {
+    "near_miss": 4600,
+    "plausible_wrong": 2636,
+    "synonym": 2495,
+    "spelling": 2476,
+    "exact": 1374,
+    "format": 1314,
+    "extra_correct": 750,
+    "extra_wrong": 707,
+    "hedge": 631,
+    "incomplete": 416,
+    "math_equiv": 184,
+    "do_not_accept": 62
+   },
+   "lane": {
+    "P": 6178,
+    "C": 6303,
+    "G": 5164
+   }
+  },
+  "val": {
+   "path": "data/training/val.csv",
+   "rows": 941,
+   "questions": 140,
+   "sha256": "0ebff8f247cd2b6b87cdaa87678232a3fb28c093d9a100990193b35cd52fd085",
+   "label_balance": {
+    "INCORRECT": 495,
+    "CORRECT": 446
+   },
+   "variant_type": {
+    "near_miss": 255,
+    "plausible_wrong": 138,
+    "synonym": 132,
+    "spelling": 127,
+    "exact": 74,
+    "format": 69,
+    "extra_wrong": 43,
+    "hedge": 35,
+    "extra_correct": 34,
+    "incomplete": 21,
+    "math_equiv": 10,
+    "do_not_accept": 3
+   },
+   "lane": {
+    "C": 345,
+    "G": 270,
+    "P": 326
+   }
+  }
+ }
+}
