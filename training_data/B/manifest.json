@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-09-20T03:11:16+00:00",
+ "generated_utc": "2026-09-20T03:24:34+00:00",
  "source_batches": [
   "B"
  ],
@@ -11,7 +11,7 @@
  "prompt_system_sha256": "e1629bfd15a3d51f061228700f3c0f2e824c29b27be3cde732d729c2ecb5a336",
  "tokenizer": "Qwen/Qwen3.5-0.8B",
  "enable_thinking": false,
- "format": "csv",
+ "format": "jsonl",
  "column_mapping": {
   "prompt": "prompt",
   "completion": "completion"
@@ -45,10 +45,10 @@
  },
  "splits": {
   "train": {
-   "path": "data/training/train.csv",
+   "path": "data/training/train.jsonl",
    "rows": 17645,
    "questions": 2655,
-   "sha256": "285666db4fcebd3a490b00c4dad28b8b608cad602727df64411b96dfae703995",
+   "sha256": "d416fe149805abcffd09b1d934d4f514a6563eb4853cbd89b08f9f7abe28a023",
    "label_balance": {
     "INCORRECT": 9052,
     "CORRECT": 8593
@@ -74,10 +74,10 @@
    }
   },
   "val": {
-   "path": "data/training/val.csv",
+   "path": "data/training/val.jsonl",
    "rows": 941,
    "questions": 140,
-   "sha256": "0ebff8f247cd2b6b87cdaa87678232a3fb28c093d9a100990193b35cd52fd085",
+   "sha256": "abe07c92812284011f422a8fa3fdbca7687ed31fdf72afd2adb836deff373380",
    "label_balance": {
     "INCORRECT": 495,
     "CORRECT": 446
