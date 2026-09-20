@@ -1,0 +1,121 @@
+{
+  "generated_utc": "2026-09-19T22:42:17+00:00",
+  "config": {
+    "batch": "B",
+    "n_questions": 2800,
+    "seed": 7,
+    "shard_size": 150,
+    "splits_json": "data/splits/split_assignments.json",
+    "curated_ids_json": "data/curated/curated_question_ids.json",
+    "generated_dir": "data/generated",
+    "codex_csv": true
+  },
+  "questions": 2800,
+  "shards": [
+    {
+      "shard": "shard_00",
+      "n": 150
+    },
+    {
+      "shard": "shard_01",
+      "n": 150
+    },
+    {
+      "shard": "shard_02",
+      "n": 150
+    },
+    {
+      "shard": "shard_03",
+      "n": 150
+    },
+    {
+      "shard": "shard_04",
+      "n": 150
+    },
+    {
+      "shard": "shard_05",
+      "n": 150
+    },
+    {
+      "shard": "shard_06",
+      "n": 150
+    },
+    {
+      "shard": "shard_07",
+      "n": 150
+    },
+    {
+      "shard": "shard_08",
+      "n": 150
+    },
+    {
+      "shard": "shard_09",
+      "n": 150
+    },
+    {
+      "shard": "shard_10",
+      "n": 150
+    },
+    {
+      "shard": "shard_11",
+      "n": 150
+    },
+    {
+      "shard": "shard_12",
+      "n": 150
+    },
+    {
+      "shard": "shard_13",
+      "n": 150
+    },
+    {
+      "shard": "shard_14",
+      "n": 150
+    },
+    {
+      "shard": "shard_15",
+      "n": 150
+    },
+    {
+      "shard": "shard_16",
+      "n": 150
+    },
+    {
+      "shard": "shard_17",
+      "n": 150
+    },
+    {
+      "shard": "shard_18",
+      "n": 100
+    }
+  ],
+  "pool": {
+    "split_final_holdout": 1399,
+    "reserved_for_curated": 300,
+    "split_val": 819,
+    "split_test": 620,
+    "eligible": 8820
+  },
+  "complexity": {
+    "low": 1766,
+    "mid": 819,
+    "high": 215
+  },
+  "category": {
+    "EARTH AND SPACE": 332,
+    "CHEMISTRY": 332,
+    "ENERGY": 332,
+    "BIOLOGY": 332,
+    "LIFE SCIENCE": 332,
+    "MATH": 331,
+    "PHYSICAL SCIENCE": 331,
+    "PHYSICS": 323,
+    "GENERAL SCIENCE": 155
+  },
+  "source_format": {
+    "MC": 1390,
+    "SA": 1410
+  },
+  "with_accept_annotation": 303,
+  "with_do_not_accept_annotation": 53
+}
