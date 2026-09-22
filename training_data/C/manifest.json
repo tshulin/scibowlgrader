@@ -1,0 +1,117 @@
+{
+ "generated_utc": "2026-09-22T19:43:59+00:00",
+ "source_batches": [
+  "C"
+ ],
+ "source_phase": "phase1",
+ "rows_per_source_batch": {
+  "C": 14588
+ },
+ "prompt_version": "prompt_v1",
+ "prompt_spec": "docs/grading_spec.md",
+ "prompt_system_sha256": "e1629bfd15a3d51f061228700f3c0f2e824c29b27be3cde732d729c2ecb5a336",
+ "tokenizer": "Qwen/Qwen3.5-0.8B",
+ "enable_thinking": false,
+ "format": "jsonl",
+ "column_mapping": {
+  "prompt": "prompt",
+  "completion": "completion"
+ },
+ "processing_mode": "raw",
+ "seed": 7,
+ "val_frac_questions": 0.05,
+ "split_unit": "question_id",
+ "totals": {
+  "rows": 14588,
+  "questions": 2910,
+  "label_balance": {
+   "INCORRECT": 7679,
+   "CORRECT": 6909
+  },
+  "variant_type": {
+   "near_miss": 3697,
+   "synonym": 2171,
+   "plausible_wrong": 1755,
+   "extra_detail": 1572,
+   "spelling": 1560,
+   "format": 1017,
+   "incomplete": 732,
+   "hedge": 501,
+   "exact": 425,
+   "precision": 409,
+   "numeric_form": 323,
+   "do_not_accept": 262,
+   "math_equiv": 164
+  },
+  "near_miss_share_of_negatives_pct": 48.14
+ },
+ "splits": {
+  "train": {
+   "path": "/tmp/batch_c_jsonl_export/train.jsonl",
+   "rows": 13845,
+   "questions": 2764,
+   "sha256": "7d4df2112312a6dc77447703f883e433205a6bec456975779f5ebdde606f8c34",
+   "label_balance": {
+    "CORRECT": 6546,
+    "INCORRECT": 7299
+   },
+   "variant_type": {
+    "near_miss": 3519,
+    "synonym": 2056,
+    "plausible_wrong": 1665,
+    "extra_detail": 1485,
+    "spelling": 1481,
+    "format": 964,
+    "incomplete": 705,
+    "hedge": 479,
+    "exact": 401,
+    "precision": 382,
+    "numeric_form": 303,
+    "do_not_accept": 246,
+    "math_equiv": 159
+   },
+   "lane": {
+    "P": 5685,
+    "C": 4363,
+    "G": 3797
+   }
+  },
+  "val": {
+   "path": "/tmp/batch_c_jsonl_export/val.jsonl",
+   "rows": 743,
+   "questions": 146,
+   "sha256": "2ce3f6956151ef44c5dd4974159c604922da134ded97ec438189582f17ac0b80",
+   "label_balance": {
+    "INCORRECT": 380,
+    "CORRECT": 363
+   },
+   "variant_type": {
+    "near_miss": 178,
+    "synonym": 115,
+    "plausible_wrong": 90,
+    "extra_detail": 87,
+    "spelling": 79,
+    "format": 53,
+    "precision": 27,
+    "incomplete": 27,
+    "exact": 24,
+    "hedge": 22,
+    "numeric_form": 20,
+    "do_not_accept": 16,
+    "math_equiv": 5
+   },
+   "lane": {
+    "P": 314,
+    "C": 230,
+    "G": 199
+   }
+  },
+  "val_eval": {
+   "path": "/tmp/batch_c_jsonl_export/val_eval.jsonl",
+   "rows": 743,
+   "questions": 146,
+   "sha256": "557e12351ed5d8dec34b8e8e6681db6b86e97b8df73369983e9e3461bb4ff2c8",
+   "schema": "merged row (bench/run_benchmark.py input)"
+  }
+ }
+}

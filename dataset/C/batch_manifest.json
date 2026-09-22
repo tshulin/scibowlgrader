@@ -1,0 +1,40 @@
+{
+  "generated_utc": "2026-09-22T05:00:33+00:00",
+  "config": {
+    "batch": "C",
+    "phase": "phase1",
+    "n_questions": 2943,
+    "seed": 7,
+    "shard_size": 170,
+    "source_campaign_manifest": "data/generated/batch_C/campaign_manifest.json"
+  },
+  "questions": 2943,
+  "shards": [
+    {"shard": "phase1_shard_00", "n": 170},
+    {"shard": "phase1_shard_01", "n": 170},
+    {"shard": "phase1_shard_02", "n": 170},
+    {"shard": "phase1_shard_03", "n": 170},
+    {"shard": "phase1_shard_04", "n": 170},
+    {"shard": "phase1_shard_05", "n": 170},
+    {"shard": "phase1_shard_06", "n": 170},
+    {"shard": "phase1_shard_07", "n": 170},
+    {"shard": "phase1_shard_08", "n": 170},
+    {"shard": "phase1_shard_09", "n": 170},
+    {"shard": "phase1_shard_10", "n": 170},
+    {"shard": "phase1_shard_11", "n": 170},
+    {"shard": "phase1_shard_12", "n": 170},
+    {"shard": "phase1_shard_13", "n": 170},
+    {"shard": "phase1_shard_14", "n": 170},
+    {"shard": "phase1_shard_15", "n": 170},
+    {"shard": "phase1_shard_16", "n": 170},
+    {"shard": "phase1_shard_17", "n": 53},
+    {"shard": "phase1_shard_18", "n": 122},
+    {"shard": "phase1_shard_19", "n": 170},
+    {"shard": "phase1_shard_20", "n": 170},
+    {"shard": "phase1_shard_21", "n": 128}
+  ],
+  "source": {
+    "campaign_source_sha256": "53ab0659f9a8b9441168ad844db78bc0eb8d587d98e7e54fb16a7f951521a1b6",
+    "phase2_status": "not_published"
+  }
+}
