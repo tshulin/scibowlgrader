@@ -1,0 +1,149 @@
+{
+ "generated_utc": "2026-09-23T18:30:08+00:00",
+ "source": "training_data/CD train (38,813 rows) -> exactly 20,000 rows; val and val_eval copied unchanged from CD",
+ "selection": {
+  "type_mix": "planned rows_by_type_total from data/generated/batch_C/campaign_manifest.json, scaled to 20,000; a type short of supply gives its shortfall to types with the same label, by plan share",
+  "dedupe": "one row per distinct (prompt, completion)",
+  "ranking": "lower penalty first; ties prefer questions with fewer rows already picked; seed 7",
+  "clause_quota": "near_miss and plausible_wrong: exactly 25 % of rows carry a trailing clause, so a clause does not predict CORRECT",
+  "stock_clause_cap": "at most 60 rows per repeated generator clause (>= 15 uses in the pool), either label; soft - when a type runs out of other rows, the least-used clause fills the gap",
+  "rows_over_cap": 163,
+  "penalties": {
+   "stock_clause": 1,
+   "question_flagged": 2,
+   "question_flagged_x2": 3,
+   "question_contested": 1,
+   "damaged_stem": 3,
+   "junk_in_key": 1,
+   "junk_in_answer": 3,
+   "echoes_annotation": 3,
+   "two_verifiers_bonus": -0.5
+  },
+  "per_type": {
+   "near_miss": {
+    "planned_share_pct": 20.39,
+    "target": 4078,
+    "selected": 4078,
+    "available": 10363
+   },
+   "synonym": {
+    "planned_share_pct": 13.25,
+    "target": 2757,
+    "selected": 2757,
+    "available": 4623
+   },
+   "spelling": {
+    "planned_share_pct": 12.24,
+    "target": 2545,
+    "selected": 2545,
+    "available": 3424
+   },
+   "plausible_wrong": {
+    "planned_share_pct": 10.2,
+    "target": 2039,
+    "selected": 2039,
+    "available": 4628
+   },
+   "extra_detail": {
+    "planned_share_pct": 9.35,
+    "target": 1944,
+    "selected": 1944,
+    "available": 4045
+   },
+   "format": {
+    "planned_share_pct": 8.5,
+    "target": 1766,
+    "selected": 1766,
+    "available": 2731
+   },
+   "numeric_form": {
+    "planned_share_pct": 6.64,
+    "target": 1327,
+    "selected": 1327,
+    "available": 1871
+   },
+   "incomplete": {
+    "planned_share_pct": 5.48,
+    "target": 1095,
+    "selected": 1095,
+    "available": 1765
+   },
+   "hedge": {
+    "planned_share_pct": 3.4,
+    "target": 680,
+    "selected": 680,
+    "available": 1464
+   },
+   "math_equiv": {
+    "planned_share_pct": 3.17,
+    "target": 269,
+    "selected": 269,
+    "available": 269
+   },
+   "precision": {
+    "planned_share_pct": 3.02,
+    "target": 605,
+    "selected": 605,
+    "available": 1011
+   },
+   "exact": {
+    "planned_share_pct": 2.55,
+    "target": 530,
+    "selected": 530,
+    "available": 1119
+   },
+   "do_not_accept": {
+    "planned_share_pct": 1.82,
+    "target": 365,
+    "selected": 365,
+    "available": 407
+   }
+  }
+ },
+ "prompt_version": "prompt_v1",
+ "prompt_spec": "docs/grading_spec.md",
+ "prompt_system_sha256": "e1629bfd15a3d51f061228700f3c0f2e824c29b27be3cde732d729c2ecb5a336",
+ "tokenizer": "Qwen/Qwen3.5-0.8B",
+ "enable_thinking": false,
+ "format": "jsonl",
+ "column_mapping": {
+  "prompt": "prompt",
+  "completion": "completion"
+ },
+ "processing_mode": "raw",
+ "seed": 7,
+ "split_unit": "question_id",
+ "splits": {
+  "train": {
+   "path": "train.jsonl",
+   "csv": "train.csv",
+   "rows": 20000,
+   "questions": 6205,
+   "sha256": "c9782c3ccf18efdbe5847f3eda1df7e3a82053f8dedc7dadcdbe42a2f974cfdd",
+   "csv_sha256": "22b0159e20bbad0392e9fe766e7f3ab1922ae20668c51b74e28a09f8339e5b37",
+   "label_balance": {
+    "CORRECT": 9811,
+    "INCORRECT": 10189
+   }
+  },
+  "val": {
+   "path": "val.jsonl",
+   "csv": "val.csv",
+   "rows": 2036,
+   "questions": 411,
+   "sha256": "d342945499ae61a7f3983da35591ad75bfdb5d2b09c6ee59d264527c9688e7ad",
+   "csv_sha256": "c2fce80a574618f31e8e101a948a6a781e3f4831b4f871261c7153fff79ae6cf",
+   "label_balance": {
+    "CORRECT": 919,
+    "INCORRECT": 1117
+   }
+  },
+  "val_eval": {
+   "path": "val_eval.jsonl",
+   "rows": 2036,
+   "questions": 411,
+   "sha256": "6021f8bf320e82dd66678510d2b72f40f65e334018a8a5cb307865bee723e5dd",
+   "schema": "merged row (bench/run_benchmark.py input)"
+  }
+ }
+}
