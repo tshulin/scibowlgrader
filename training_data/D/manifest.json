@@ -1,0 +1,117 @@
+{
+ "generated_utc": "2026-09-23T17:54:30+00:00",
+ "source_batches": [
+  "C"
+ ],
+ "source_phase": "phase2",
+ "rows_per_source_batch": {
+  "C": 26281
+ },
+ "prompt_version": "prompt_v1",
+ "prompt_spec": "docs/grading_spec.md",
+ "prompt_system_sha256": "e1629bfd15a3d51f061228700f3c0f2e824c29b27be3cde732d729c2ecb5a336",
+ "tokenizer": "Qwen/Qwen3.5-0.8B",
+ "enable_thinking": false,
+ "format": "jsonl",
+ "column_mapping": {
+  "prompt": "prompt",
+  "completion": "completion"
+ },
+ "processing_mode": "raw",
+ "seed": 7,
+ "val_frac_questions": 0.05,
+ "split_unit": "question_id",
+ "totals": {
+  "rows": 26281,
+  "questions": 5415,
+  "label_balance": {
+   "CORRECT": 11154,
+   "INCORRECT": 15127
+  },
+  "variant_type": {
+   "near_miss": 7216,
+   "synonym": 3628,
+   "plausible_wrong": 3117,
+   "extra_detail": 2691,
+   "spelling": 2063,
+   "format": 1897,
+   "numeric_form": 1658,
+   "incomplete": 1263,
+   "hedge": 1040,
+   "exact": 761,
+   "precision": 658,
+   "do_not_accept": 175,
+   "math_equiv": 114
+  },
+  "near_miss_share_of_negatives_pct": 47.7
+ },
+ "splits": {
+  "train": {
+   "path": "data/training/batch_C_phase2_jsonl/train.jsonl",
+   "rows": 24968,
+   "questions": 5144,
+   "sha256": "6009de2efea3d69619b2bacd1c2fd014965c7adda090063c8de3977afa927c14",
+   "label_balance": {
+    "INCORRECT": 14378,
+    "CORRECT": 10590
+   },
+   "variant_type": {
+    "near_miss": 6858,
+    "synonym": 3452,
+    "plausible_wrong": 2970,
+    "extra_detail": 2561,
+    "spelling": 1944,
+    "format": 1799,
+    "numeric_form": 1578,
+    "incomplete": 1190,
+    "hedge": 985,
+    "exact": 722,
+    "precision": 635,
+    "do_not_accept": 162,
+    "math_equiv": 112
+   },
+   "lane": {
+    "P": 9968,
+    "C": 9183,
+    "G": 5817
+   }
+  },
+  "val": {
+   "path": "data/training/batch_C_phase2_jsonl/val.jsonl",
+   "rows": 1313,
+   "questions": 271,
+   "sha256": "fc235944370ac6c715ec43bf48bf72a4ea6ce8e50bc144d368b8bf14b9e134b1",
+   "label_balance": {
+    "INCORRECT": 749,
+    "CORRECT": 564
+   },
+   "variant_type": {
+    "near_miss": 358,
+    "synonym": 176,
+    "plausible_wrong": 147,
+    "extra_detail": 130,
+    "spelling": 119,
+    "format": 98,
+    "numeric_form": 80,
+    "incomplete": 73,
+    "hedge": 55,
+    "exact": 39,
+    "precision": 23,
+    "do_not_accept": 13,
+    "math_equiv": 2
+   },
+   "lane": {
+    "C": 463,
+    "G": 342,
+    "P": 508
+   }
+  },
+  "val_eval": {
+   "path": "data/training/batch_C_phase2_jsonl/val_eval.jsonl",
+   "rows": 1313,
+   "questions": 271,
+   "sha256": "b4238e72e1190cf52c3d8001ae216090ce8d110c355bbb8c0c6da339b8c1dff6",
+   "schema": "merged row (bench/run_benchmark.py input)"
+  }
+ }
+}

@@ -1,0 +1,157 @@
+{
+  "generated_utc": "2026-09-23T18:00:00+00:00",
+  "config": {
+    "batch": "C",
+    "phase": "phase2",
+    "published_as": "D",
+    "n_questions": 5562,
+    "seed": 7,
+    "shard_size": 170,
+    "source_campaign_manifest": "data/generated/batch_C/campaign_manifest.json"
+  },
+  "questions": 5562,
+  "shards": [
+    {
+      "shard": "phase2_shard_00",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_01",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_02",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_03",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_04",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_05",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_06",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_07",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_08",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_09",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_10",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_11",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_12",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_13",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_14",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_15",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_16",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_17",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_18",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_19",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_20",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_21",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_22",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_23",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_24",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_25",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_26",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_27",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_28",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_29",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_30",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_31",
+      "n": 170
+    },
+    {
+      "shard": "phase2_shard_32",
+      "n": 122
+    }
+  ],
+  "answer_corrections": {
+    "path": "answer_corrections.jsonl",
+    "fix": 24,
+    "drop": 15,
+    "note": "questions.jsonl keeps the original keys the rows were generated against; rows for these 39 questions are excluded from training_data/D"
+  },
+  "source": {
+    "campaign_source_sha256": "53ab0659f9a8b9441168ad844db78bc0eb8d587d98e7e54fb16a7f951521a1b6",
+    "phase1_published_as": "C"
+  }
+}

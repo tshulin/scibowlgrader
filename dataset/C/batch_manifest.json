@@ -35,6 +35,6 @@
   ],
   "source": {
     "campaign_source_sha256": "53ab0659f9a8b9441168ad844db78bc0eb8d587d98e7e54fb16a7f951521a1b6",
-    "phase2_status": "not_published"
+    "phase2_status": "published_as_D"
   }
 }
