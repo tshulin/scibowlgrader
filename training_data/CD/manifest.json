@@ -1,0 +1,73 @@
+{
+ "generated_utc": "2026-09-23T18:11:32+00:00",
+ "source_sets": {
+  "C": "batch C phase1 (training_data/C)",
+  "D": "batch C phase2 (training_data/D)"
+ },
+ "rows_per_source_set": {
+  "C": {
+   "train": 13845,
+   "val": 743
+  },
+  "D": {
+   "train": 24968,
+   "val": 1313
+  }
+ },
+ "combine": "concatenated C then D per split, then shuffled with random.Random(7); val and val_eval share one permutation so row i matches",
+ "prompt_version": "prompt_v1",
+ "prompt_spec": "docs/grading_spec.md",
+ "prompt_system_sha256": "e1629bfd15a3d51f061228700f3c0f2e824c29b27be3cde732d729c2ecb5a336",
+ "tokenizer": "Qwen/Qwen3.5-0.8B",
+ "enable_thinking": false,
+ "format": "jsonl",
+ "column_mapping": {
+  "prompt": "prompt",
+  "completion": "completion"
+ },
+ "processing_mode": "raw",
+ "seed": 7,
+ "split_unit": "question_id",
+ "leakage": "C and D share no question_id; each source split is disjoint by question_id. The source holds duplicate questions under different ids, so val questions whose exact (question, official_answer) text also occurs in train were removed from val/val_eval.",
+ "splits": {
+  "train": {
+   "path": "train.jsonl",
+   "csv": "train.csv",
+   "rows": 38813,
+   "questions": 7908,
+   "sha256": "26bd4c5702a8efea71e307d09b4c1293be8ad901daf7fae2ffd81d59cd35f722",
+   "csv_sha256": "e51a930221985bda50db5cc2ba20c49d3944f89ff45d65d72b81a053bfc6d6a2",
+   "label_balance": {
+    "CORRECT": 17136,
+    "INCORRECT": 21677
+   }
+  },
+  "val": {
+   "path": "val.jsonl",
+   "csv": "val.csv",
+   "rows": 2036,
+   "questions": 411,
+   "sha256": "d342945499ae61a7f3983da35591ad75bfdb5d2b09c6ee59d264527c9688e7ad",
+   "csv_sha256": "c2fce80a574618f31e8e101a948a6a781e3f4831b4f871261c7153fff79ae6cf",
+   "label_balance": {
+    "CORRECT": 919,
+    "INCORRECT": 1117
+   }
+  },
+  "val_eval": {
+   "path": "val_eval.jsonl",
+   "rows": 2036,
+   "questions": 411,
+   "sha256": "6021f8bf320e82dd66678510d2b72f40f65e334018a8a5cb307865bee723e5dd",
+   "schema": "merged row (bench/run_benchmark.py input)"
+  }
+ },
+ "val_removed_duplicate_questions": [
+  "sb-006696",
+  "sb-031728",
+  "sb-031734",
+  "sb-031772",
+  "sb-031786",
+  "sb-038360"
+ ]
+}
