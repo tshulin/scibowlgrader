@@ -1,0 +1,7 @@
+
+# Oversized archives are committed as .partNN pieces; rebuild with newly_trained_models/reassemble.sh
+newly_trained_models/B/adaption_gemma_3_4b_it_scibowlgrader_b_0b9bf161.tgz
+newly_trained_models/C/adaption_gemma_3_4b_it_science_bowl_c_02608e0f.tgz
+newly_trained_models/C/adaption_llama_3_2_3b_instruc_science_bowl_c_e2f8de01.tgz
+newly_trained_models/E/adaption_gemma_3_4b_it_science_bowl_e_3f963e12.tgz
+newly_trained_models/E/adaption_mistral_7b_instruct_science_bowl_e_31cced9d.tgz
