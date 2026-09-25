@@ -1,0 +1,88 @@
+{
+ "generated_utc": "2026-09-25T19:57:20+00:00",
+ "source": "training_data/E (20,000 rows) minus its 1,327 numeric_form rows and 681 spelling/format CORRECT rows, plus 1,939 batch-F rows (data/generated/batch_F); val and val_eval copied unchanged from E",
+ "plan": "plan/dataset_F_plan.md",
+ "changes": {
+  "rows_removed": 2008,
+  "rows_removed_by_type": {
+   "spelling": 399,
+   "numeric_form": 1327,
+   "format": 282
+  },
+  "rows_added": 1939,
+  "rows_added_by_type": {
+   "numeric_form": 1258,
+   "math_equiv": 681
+  },
+  "why": "79 % of E's numeric_form rows sat on stems that never state a required form, so they contradicted the format/math_equiv rows; E scored 35.2 % on benchmark-v2 numeric_form. Every batch-F stem states its form in words (lowest terms, simplest radical form, in terms of π, scientific notation, ...).",
+  "batch_F_rows": "700 new problems by Claude (claude-opus-5-5, prompt F_author_v1); GPT (gpt-5) solved each blind and graded each row label-blind; kept only rows where GPT agreed with the key and the label and did not flag; unreduced-π-coefficient rows dropped where the stem does not ask for simplest form. See data/generated/batch_F/LOG.md.",
+  "contrast_rows_offset": "681 spelling/format CORRECT rows removed, seed 7",
+  "e_rows_byte_identical": true
+ },
+ "prompt_version": "prompt_v1",
+ "prompt_spec": "docs/grading_spec.md",
+ "prompt_system_sha256": "e1629bfd15a3d51f061228700f3c0f2e824c29b27be3cde732d729c2ecb5a336",
+ "tokenizer": "Qwen/Qwen3.5-0.8B",
+ "enable_thinking": false,
+ "format": "jsonl",
+ "column_mapping": {
+  "prompt": "prompt",
+  "completion": "completion"
+ },
+ "processing_mode": "raw",
+ "seed": 7,
+ "split_unit": "question_id",
+ "splits": {
+  "train": {
+   "path": "train.jsonl",
+   "csv": "train.csv",
+   "rows": 19931,
+   "questions": 6857,
+   "sha256": "74ba9aa72a6891c065dc19f5a7cf679341b18a8f4b372efdbddb0f5b059e4dcb",
+   "csv_sha256": "aafd7950372a7f4ffa6c1109440565db8af7c4b9b229a0f55efd41260d1b7721",
+   "label_balance": {
+    "CORRECT": 9811,
+    "INCORRECT": 10120
+   },
+   "rows_by_type": {
+    "near_miss": 4078,
+    "synonym": 2757,
+    "spelling": 2146,
+    "plausible_wrong": 2039,
+    "extra_detail": 1944,
+    "format": 1484,
+    "numeric_form": 1258,
+    "incomplete": 1095,
+    "math_equiv": 950,
+    "hedge": 680,
+    "precision": 605,
+    "exact": 530,
+    "do_not_accept": 365
+   }
+  },
+  "val": {
+   "path": "val.jsonl",
+   "csv": "val.csv",
+   "rows": 2036,
+   "questions": 411,
+   "sha256": "d342945499ae61a7f3983da35591ad75bfdb5d2b09c6ee59d264527c9688e7ad",
+   "csv_sha256": "c2fce80a574618f31e8e101a948a6a781e3f4831b4f871261c7153fff79ae6cf",
+   "label_balance": {
+    "CORRECT": 919,
+    "INCORRECT": 1117
+   }
+  },
+  "val_eval": {
+   "path": "val_eval.jsonl",
+   "rows": 2036,
+   "questions": 411,
+   "sha256": "6021f8bf320e82dd66678510d2b72f40f65e334018a8a5cb307865bee723e5dd",
+   "schema": "merged row (bench/run_benchmark.py input)"
+  }
+ },
+ "selection": {
+  "path": "selection.jsonl",
+  "note": "row i of selection.jsonl describes row i of train.jsonl; lane F rows are batch F, the rest are E's selection entries unchanged"
+ },
+ "recommended_training": "E's hyperparameters (LoRA r=16, alpha=32, 3 epochs, peak lr 1e-4) so that F - E measures the data change alone; owner decision 3 in plan/dataset_F_plan.md"
+}
