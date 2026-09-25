@@ -1,8 +1,3 @@
 # Archives split into <100 MiB parts to satisfy GitHub's per-file limit.
 # Rebuild them with ./reassemble.sh   (columns: path  bytes  nparts  sha256)
 # Despite the .tgz name these are zstd tarballs: unpack with  tar --zstd -xf <file>
-B/adaption_gemma_3_4b_it_scibowlgrader_b_0b9bf161.tgz  116442749  2  e2d809b8171de830bec1cd1d1fd36559917d262f577693cb77515f4503c35758
-C/adaption_gemma_3_4b_it_science_bowl_c_02608e0f.tgz  226389924  3  47048340974bf9b5b93b8665c784b31350f87a6752e3b47cd714eb54fa7ce88b
-C/adaption_llama_3_2_3b_instruc_science_bowl_c_e2f8de01.tgz  182775444  2  931f8cab908b1e47809e23bd3f07817fac3c189667851154648605b0e283c509
-E/adaption_gemma_3_4b_it_science_bowl_e_3f963e12.tgz  225885391  3  cc12bb5ce5b1676c662a2b378d6bde140399a10e1bbaa50bdde592947dff0f5d
-E/adaption_mistral_7b_instruct_science_bowl_e_31cced9d.tgz  311298129  4  563006d2e265510578824484b9c5d6c139a93d51383ef86d43eb3167799515df
