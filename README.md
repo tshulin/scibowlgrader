@@ -23,22 +23,47 @@ goal is a small model that can run locally in a browser through WebGPU.
 
 ## Current model
 
+**[`scibowlgrader_qwen3_5_0_8b_model_f_int4`](models/scibowlgrader_qwen3_5_0_8b_model_f_int4/)**
+
 | Property | Value |
 |---|---|
 | Base model | Qwen3.5-0.8B |
-| Fine-tuning method | LoRA |
-| Training set | F |
-| Recommended deployment precision | INT4 |
-| Benchmark-v2 accuracy | 97.4% |
+| Fine-tuning method | LoRA (r=16, α=32, 4 epochs, peak lr 1e-4) |
+| Training set | F (19,931 rows) |
+| Deployment precision | INT4 W4A16 (GPTQ) |
+| Benchmark-v2 accuracy | 97.4% (all 3,653 rows) |
+| False accepts / false rejects | 3.7% / 1.4% |
+| Size | 943 MB |
 
-The F model and its bf16, FP8, and INT4 exports are not yet included in this
-repository. The repository currently contains the directly loadable
-[B LoRA adapter](models/B/) and archived B, C, and E adapters in
-[`newly_trained_models/`](newly_trained_models/).
+All models are in [`models/`](models/), named
+`scibowlgrader_qwen3_5_0_8b_model_<training set>_<form>`:
 
-> **Archive note:** despite their `.tgz` extension, the adapter archives are
-> zstd-compressed tar files. Extract them with
-> `tar --zstd -xf <archive-name>.tgz`.
+| Model | Form | Benchmark-v2 accuracy |
+|---|---|---|
+| [`..._f_int4`](models/scibowlgrader_qwen3_5_0_8b_model_f_int4/) | merged, INT4 W4A16 | **97.4%** (recommended) |
+| [`..._f_fp8`](models/scibowlgrader_qwen3_5_0_8b_model_f_fp8/) | merged, FP8 (stored checkpoint) | 96.8% |
+| [`..._f_bf16`](models/scibowlgrader_qwen3_5_0_8b_model_f_bf16/) | merged, bf16 | 97.5% |
+| [`..._f_lora`](models/scibowlgrader_qwen3_5_0_8b_model_f_lora/) | LoRA adapter | 97.5% (merged in bf16) |
+| [`..._e_lora`](models/scibowlgrader_qwen3_5_0_8b_model_e_lora/) | LoRA adapter | 86.7% |
+| [`..._c_lora`](models/scibowlgrader_qwen3_5_0_8b_model_c_lora/) | LoRA adapter | 88.8% |
+| [`..._b_lora`](models/scibowlgrader_qwen3_5_0_8b_model_b_lora/) | LoRA adapter | 90.7% |
+
+The merged models store `model.safetensors` in 95 MiB pieces (GitHub's
+per-file limit is 100 MB). Rebuild them once after cloning; the script checks
+every file's sha256:
+
+```bash
+bash models/reassemble.sh
+```
+
+Then load a folder directly, for example
+`vllm.LLM(model="models/scibowlgrader_qwen3_5_0_8b_model_f_int4")`. See
+[`models/README.md`](models/README.md) for the prompt format and for loading
+the LoRA adapters.
+
+The FP8 model is a stored checkpoint (96.8%). Loading the bf16 model with
+vLLM's `quantization="fp8"` instead scored 97.4%; the benchmark tables below
+report that load-time FP8.
 
 ## Repository contents
 
@@ -46,8 +71,7 @@ repository. The repository currently contains the directly loadable
 |---|---|
 | [`training_data/`](training_data/) | Model-ready train and validation splits for datasets B–F |
 | [`dataset/`](dataset/) | Generated examples, source questions, shards, and verification metadata |
-| [`models/B/`](models/B/) | Directly loadable LoRA adapter for model B |
-| [`newly_trained_models/`](newly_trained_models/) | Archived adapters for models B, C, and E |
+| [`models/`](models/) | Every model: F in INT4, FP8, bf16 and as a LoRA adapter; LoRA adapters for B, C and E |
 | [`graphics/`](graphics/) | Benchmark charts in PNG and SVG formats |
 
 Training rows use a simple prompt/completion schema:

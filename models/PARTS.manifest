@@ -2,3 +2,4 @@
 # Rebuild them with  bash models/reassemble.sh   (columns: path  bytes  nparts  sha256)
 scibowlgrader_qwen3_5_0_8b_model_f_int4/model.safetensors  968299024  10  2a1a23f0987188540b8c0e47d5e4f62f017800c7101b9d5769f08cd6eb40f028
 scibowlgrader_qwen3_5_0_8b_model_f_fp8/model.safetensors  1209240600  13  c3712b91fcbbf1ee535d7c4f16414b0414f6d0934c2f578c8ea7b26a9645f4e4
+scibowlgrader_qwen3_5_0_8b_model_f_bf16/model.safetensors  1706030528  18  174ece756da2905f649f668b0f9604181819c2181e1f15c31bd1815178395b4a
