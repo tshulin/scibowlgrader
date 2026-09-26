@@ -1,0 +1,17 @@
+{
+  "generated_utc": "2026-09-26T20:46:44+00:00",
+  "source_model": "models/qwen3.5-0.8b/F-merged",
+  "out": "models/qwen3.5-0.8b/F-fp8",
+  "architecture": "Qwen3_5ForConditionalGeneration",
+  "scheme": "FP8_DYNAMIC",
+  "method": "QuantizationModifier (no calibration)",
+  "targets": "Linear",
+  "ignore": [
+    "lm_head",
+    "re:.*visual.*"
+  ],
+  "llmcompressor": "0.14.0",
+  "transformers": "5.17.0",
+  "torch": "2.13.0+cu130",
+  "seconds": 1.3
+}
