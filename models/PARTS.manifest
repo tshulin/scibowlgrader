@@ -1,0 +1,2 @@
+# Large files split into 95 MiB .partNN pieces to fit GitHub's 100 MB per-file limit.
+# Rebuild them with  bash models/reassemble.sh   (columns: path  bytes  nparts  sha256)

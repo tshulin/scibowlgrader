@@ -1,2 +1,2 @@
-
-# Oversized archives are committed as .partNN pieces; rebuild with newly_trained_models/reassemble.sh
+# Large model files are committed as .partNN pieces; rebuild them with models/reassemble.sh
+models/*/model.safetensors

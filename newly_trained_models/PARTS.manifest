@@ -1,3 +1,0 @@
-# Archives split into <100 MiB parts to satisfy GitHub's per-file limit.
-# Rebuild them with ./reassemble.sh   (columns: path  bytes  nparts  sha256)
-# Despite the .tgz name these are zstd tarballs: unpack with  tar --zstd -xf <file>
