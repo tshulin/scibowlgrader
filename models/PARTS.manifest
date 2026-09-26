@@ -1,2 +1,3 @@
 # Large files split into 95 MiB .partNN pieces to fit GitHub's 100 MB per-file limit.
 # Rebuild them with  bash models/reassemble.sh   (columns: path  bytes  nparts  sha256)
+scibowlgrader_qwen3_5_0_8b_model_f_int4/model.safetensors  968299024  10  2a1a23f0987188540b8c0e47d5e4f62f017800c7101b9d5769f08cd6eb40f028
